@@ -1,0 +1,11 @@
+.result {
+    width: 280px;
+    height: 70px;
+    border: 1px solid black;
+    overflow-wrap: break-word;
+}
+
+.result p {
+    font-size: 24px;
+    margin: 5px;
+  }

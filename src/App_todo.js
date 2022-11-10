@@ -23,15 +23,8 @@ class App extends React.Component {
         else {
             if (this.state.resetOnNext) {
                 // TODO: set the state of result to button and resetOnNext to false
-                this.setState({
-                    result: button,
-                    resetOnNext: false
-                });
             } else {
                 // TODO: set the state of result to result + button
-                this.setState({
-                    result: this.state.result + button
-                });
             }
         }
     };
@@ -82,9 +75,8 @@ class App extends React.Component {
       return (
           <div>
               <div className="calculator-body">
-                    {/* TODO:  Create the Display and Board tags. Look at Board and Display and see what you need to pass in.*/}
-                    <Display result={this.state.result}/>
-                    <Board onClick={button => this.onClick(button)}/>
+                    {/* TODO:  Create the Display and Board tags. 
+                    Look at Board and Display and see what you need to pass in.*/}
               </div>
           </div>
       );

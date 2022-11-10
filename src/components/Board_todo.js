@@ -11,14 +11,6 @@ function Square(props) {
 
 class Board extends React.Component {
     // TODO: implement the function renderSquare
-    renderSquare(i) {
-        return (
-          <Square
-            value={i}
-            onClick={() => this.props.onClick(i)}
-          />
-        );
-    }
 
     render() {
       return (

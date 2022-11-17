@@ -7,6 +7,7 @@ class App extends React.Component {
     constructor() {
         super();
         // TODO: create the state variable where result = "" and resetOnNext =  false
+        
     }
 
     onClick(button) {
@@ -19,8 +20,10 @@ class App extends React.Component {
         else {
             if (this.state.resetOnNext) {
                 // TODO: set the state of result to button and resetOnNext to false
+                
             } else {
                 // TODO: set the state of result to result + button
+              
             }
         }
     };
@@ -69,10 +72,11 @@ class App extends React.Component {
 
   render() {
       return (
-          <div>
+          <div className="App">
               <div className="calculator-body">
-                    {/* TODO:  Create the Display and Board tags. 
-                    Look at Board and Display and see what you need to pass in.*/}
+                  {/* TODO:  Create the Display and Board tags. 
+                  Look at Board and Display and see what you need to pass in.*/}
+
               </div>
           </div>
       );

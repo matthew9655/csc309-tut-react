@@ -1,6 +1,6 @@
 # Simple Calculator App
 
-### You need to fill in the TODO blanks. All of these code sections can be found in `components/Board.js` and `App.js`.
+### You need to fill in the TODO blanks. All of these code sections can be found in `src/components/Board.js` and `src/App.js`.
 
 ### `npm start`
 

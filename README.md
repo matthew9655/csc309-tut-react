@@ -19,6 +19,6 @@ At the beginning of the project, you should see a blank white page.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### You need to fill in the TODO blanks. All of these code sections can be found in `src/components/Board.js` and `src/App.js`. Please complete the code sections in ascending order. The ordering has been made for you. The first one is in `Board.js`.
+### You need to fill in the TODO blanks. All of these code sections can be found in `src/components/Board.js` and `src/App.js`. Please complete the code sections in ascending order noted by the number at the beginning of the comments. The first one is in `Board.js`.
 
 

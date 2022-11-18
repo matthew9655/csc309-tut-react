@@ -4,8 +4,8 @@
 If you have never installed `Node` or `npm` before please follow this:
 
 1. `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash`
-2. restart your shell
-3. nvm install node
+2. restart your shell (close it and open, alternatively you can `source` your `rc` or `profile` script)
+3. `nvm install node`
 4. `cd` into the repo
 5. `npm install`
 6. `npm start`

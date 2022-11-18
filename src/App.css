@@ -6,6 +6,8 @@
 }
 
 .calculator-body {
+  display: flex;
+  flex-direction: column;
   text-align: left;
   max-width: 400px;
   margin-top: 30px;

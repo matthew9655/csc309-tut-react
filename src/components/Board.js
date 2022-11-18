@@ -10,7 +10,7 @@ function Square(props) {
   }
 
 class Board extends React.Component {
-    // TODO: create and implement the function renderSquare
+    // 1. TODO: create and implement the function renderSquare
     // Hint: components can be used as tags
     // Hint: Look at the props of Square, what do we need to pass in?
 

@@ -7,7 +7,7 @@ class Display extends React.Component {
         return (
             <div className="result">
                 <p>{res}</p>
-                </div>
+            </div>
         );
     }
 }

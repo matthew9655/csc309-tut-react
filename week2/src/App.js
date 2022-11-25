@@ -21,7 +21,7 @@ function App() {
   // check the react-color-wheel documentation
 
 
-  // TODO: use the useEffect hook log when we calculate an equation.
+  // TODO: use the useEffect hook to log when we calculate an equation.
 
 
   function onClick(button) {
@@ -88,8 +88,8 @@ function App() {
         <div className="calculator-body">
             {/* TODO: pass the prop hex to the display and board child components. the hsvatoHex
             helper function has been imported for you. These are the original tags:
-            <Display result={this.state.result}/>
-            <Board onClick={button => this.onClick(button)}/> */}
+            <Display result={result}/>
+            <Board onClick={button => onClick(button)}/> */}
       
         </div>
         <div className='wheel-container'>

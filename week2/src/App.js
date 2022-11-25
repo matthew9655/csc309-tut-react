@@ -86,8 +86,8 @@ function App() {
   return (
     <div className='App'>
         <div className="calculator-body">
-            {/* TODO:  pass the prop hex to the display and board child components. the hsvatoHex
-            helper function has been imported for you these are the original tags:
+            {/* TODO: pass the prop hex to the display and board child components. the hsvatoHex
+            helper function has been imported for you. These are the original tags:
             <Display result={this.state.result}/>
             <Board onClick={button => this.onClick(button)}/> */}
       
@@ -96,8 +96,9 @@ function App() {
           <div className='swap-button' onClick={() => swapBoardAndDisplay()}>
             {boardOrDisplay ? 'Display' : 'Board'}
           </div>
-          {/* TODO: Create the wheel tag. Look at the package on how to create it. We only use 1 wheel
-          to change the colors of both display and board, how can we do that with both color states.
+          {/* TODO: Create the wheel tag. Look at the package link on how to create it. Furthermore,
+          we only use 1 wheel to change the colors of both display and board, 
+          how can we do that with both color states.
           Hint: look at the swap-button div*/}
         
         </div>

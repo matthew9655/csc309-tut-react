@@ -9,19 +9,20 @@ function App() {
     
   const [result, setResult] = useState("");
   const [resetOnNext, setResetOnNext] = useState(false);
-  const [numEquations, setNumEquations] = useState(0);
-  const [hsvaDisplay, setHsvaDisplay] = useState({ h: 0, s: 0, v: 68, a: 1 });
-  const [hsvaBoard, setHsvaBoard] = useState({ h: 0, s: 0, v: 68, a: 1 });
   const [boardOrDisplay, setBoardOrDisplay] = useState(true);
 
-  useEffect(() => {
-    console.log(`we have calculated ${numEquations} equations!`);
-  }, [numEquations]);
+  //  TODO: create the state variable numEquations and setNumEquations using the useState hook
 
-  // useEffect(() => {
-  //   console.log(`${hsvaDisplay.h}, ${hsvaDisplay.s}, ${hsvaDisplay.v}`);
-  //   console.log(`${hsvaBoard.h}, ${hsvaBoard.s}, ${hsvaBoard.v}`);
-  // });
+
+  // TODO:create the state variable hsvaDisplay and setHsvaDisplay using the useState hook
+  // check the react-color-wheel documentation
+
+  // create the state variable hsvaBoard and setHsvaBoard using the useState hook
+  // check the react-color-wheel documentation
+
+
+  // TODO: use the useEffect hook log when we calculate an equation.
+
 
   function onClick(button) {
     if(button === "="){
@@ -57,7 +58,8 @@ function App() {
           setResult("Infinity");
           setResetOnNext(true);
         } else {
-          setNumEquations(numEquations + 1);
+          // TODO: increase the state of numEquations by 1
+          
           const isDecimal = (ans- Math.floor(ans)) !== 0;
           setResult(((isDecimal ? ans.toPrecision(8) :  ans) || "" ) + "");
         }
@@ -84,19 +86,20 @@ function App() {
   return (
     <div className='App'>
         <div className="calculator-body">
-            <Display hex={hsvaToHex(hsvaDisplay)}result={result}/>
-            <Board  hex={hsvaToHex(hsvaBoard)} onClick={button => onClick(button)}/>
+            {/* TODO:  pass the prop hex to the display and board child components. the hsvatoHex
+            helper function has been imported for you these are the original tags:
+            <Display result={this.state.result}/>
+            <Board onClick={button => this.onClick(button)}/> */}
+      
         </div>
         <div className='wheel-container'>
-          <div className='swap-button' onClick={() => swapBoardAndDisplay()}>{boardOrDisplay ? 'Display' : 'Board'}</div>
-          <Wheel
-            className='wheel'
-            color={boardOrDisplay ? hsvaDisplay : hsvaBoard}
-            onChange={(color) => {
-              boardOrDisplay ? setHsvaDisplay({ ...hsvaDisplay, ...color.hsva })
-                : setHsvaBoard({ ...hsvaBoard, ...color.hsva });
-            }}
-          />
+          <div className='swap-button' onClick={() => swapBoardAndDisplay()}>
+            {boardOrDisplay ? 'Display' : 'Board'}
+          </div>
+          {/* TODO: Create the wheel tag. Look at the package on how to create it. We only use 1 wheel
+          to change the colors of both display and board, how can we do that with both color states.
+          Hint: look at the swap-button div*/}
+        
         </div>
     </div>
   );

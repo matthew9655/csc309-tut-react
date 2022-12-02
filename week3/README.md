@@ -4,8 +4,7 @@
  - Handling APIs
  - Routers
 
-### You need to fill in the TODO blanks. All of these code sections can be found in `src/Index.js` and 
-`src/routes/Fruit/FruitApp.js`
+### You need to fill in the TODO blanks. All of these code sections can be found in `src/Index.js` and `src/routes/Fruit/FruitApp.js`
 
 ### Since we are trying to call domain APIs from localhost, we will probably run into a CORS issue. To solve this, we create a proxy. run `node cors.js` before you `npm start`.
 

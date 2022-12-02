@@ -1,33 +1,28 @@
 import React, { useState, useEffect } from 'react'
 import './App.css';
-import Display from "./components/Display.js"
-import Board from "./components/Board.js"
+import Display from "./components/Calculator/Display.js"
+import Board from "./components/Calculator/Board.js"
 import Wheel from '@uiw/react-color-wheel';
 import { hsvaToHex } from '@uiw/color-convert';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
     
   const [result, setResult] = useState("");
   const [resetOnNext, setResetOnNext] = useState(false);
+  const [numEquations, setNumEquations] = useState(0);
+  const [hsvaDisplay, setHsvaDisplay] = useState({ h: 0, s: 0, v: 68, a: 1 });
+  const [hsvaBoard, setHsvaBoard] = useState({ h: 0, s: 0, v: 68, a: 1 });
   const [boardOrDisplay, setBoardOrDisplay] = useState(true);
 
-  //  TODO: create the state variable numEquations and setNumEquations using the useState hook
-
-
-  // TODO:create the state variable hsvaDisplay and setHsvaDisplay using the useState hook
-  // check the react-color-wheel documentation
-
-
-  // create the state variable hsvaBoard and setHsvaBoard using the useState hook
-  // check the react-color-wheel documentation
-  
-
-
-  // TODO: use the useEffect hook to log when we calculate an equation.
   useEffect(() => {
     console.log(`we have calculated ${numEquations} equations!`);
   }, [numEquations]);
 
+  // useEffect(() => {
+  //   console.log(`${hsvaDisplay.h}, ${hsvaDisplay.s}, ${hsvaDisplay.v}`);
+  //   console.log(`${hsvaBoard.h}, ${hsvaBoard.s}, ${hsvaBoard.v}`);
+  // });
 
   function onClick(button) {
     if(button === "="){
@@ -63,8 +58,7 @@ function App() {
           setResult("Infinity");
           setResetOnNext(true);
         } else {
-          // TODO: increase the state of numEquations by 1
-         
+          setNumEquations(numEquations + 1);
           const isDecimal = (ans- Math.floor(ans)) !== 0;
           setResult(((isDecimal ? ans.toPrecision(8) :  ans) || "" ) + "");
         }
@@ -91,22 +85,19 @@ function App() {
   return (
     <div className='App'>
         <div className="calculator-body">
-            {/* TODO: pass the prop hex to the display and board child components. the hsvatoHex
-            helper function has been imported for you. These are the original tags:
-            <Display result={result}/>
-            <Board onClick={button => onClick(button)}/> */}
-
+            <Display hex={hsvaToHex(hsvaDisplay)}result={result}/>
+            <Board  hex={hsvaToHex(hsvaBoard)} onClick={button => onClick(button)}/>
         </div>
         <div className='wheel-container'>
-          <div className='swap-button' onClick={() => swapBoardAndDisplay()}>
-            {boardOrDisplay ? 'Display' : 'Board'}
-          </div>
-          {/* TODO: Create the wheel tag. Look at the package link on how to create it. Furthermore,
-          we only use 1 wheel to change the colors of both display and board, 
-          how can we do that with both color states.
-          Hint: look at the swap-button div*/}
-
-        
+          <div className='swap-button' onClick={() => swapBoardAndDisplay()}>{boardOrDisplay ? 'Display' : 'Board'}</div>
+          <Wheel
+            className='wheel'
+            color={boardOrDisplay ? hsvaDisplay : hsvaBoard}
+            onChange={(color) => {
+              boardOrDisplay ? setHsvaDisplay({ ...hsvaDisplay, ...color.hsva })
+                : setHsvaBoard({ ...hsvaBoard, ...color.hsva });
+            }}
+          />
         </div>
     </div>
   );

@@ -1,0 +1,9 @@
+.search-bar {
+    display: flex;
+    flex-direction: row;
+}
+
+.submit-button {
+    margin-left: 5px;
+    height: 100%;
+}

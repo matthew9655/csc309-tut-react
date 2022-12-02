@@ -1,0 +1,34 @@
+.App {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.calculator-body {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  max-width: 400px;
+  margin: 30px 30px 30px 30px;
+}
+
+.wheel-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wheel {
+  margin-top: 15px;
+  width: 100px;
+}
+
+.swap-button {
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+  border: 2px solid grey;
+}

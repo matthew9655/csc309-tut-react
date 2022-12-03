@@ -30,6 +30,7 @@ function FruitApp() {
     }).catch((error) => {
         // TODO: we only manage the response here, handle the error as well.
         // Specifically, show the modal when the error response is 404. 
+        // Use the FruitModal created for you. Look at what props you need to add in.
         // 404 here means that the fruitInfo does not exist.
 
     });
